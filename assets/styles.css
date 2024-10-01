@@ -1,0 +1,122 @@
+/* styles.css */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #001530; /* Deep navy blue */
+    color: #FFFFFF; /* White text */
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.logo {
+    width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    background: linear-gradient(45deg, #406c90, #A2BF57);
+    color: #FFFFFF;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+}
+
+.button i {
+    margin-right: 0px;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.contact {
+    margin-top: 30px;
+    font-size: 1em;
+}
+
+.contact a {
+    color: #A2BF57; /* Green accent */
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #F5F5F5; /* Light gray */
+    text-align: center;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    color: #F5F5F5;
+    margin: 0 10px;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #A2BF57;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .button {
+        width: 100%;
+        justify-content: center;
+    }
+}
