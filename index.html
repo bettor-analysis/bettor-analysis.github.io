@@ -1,54 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bettor Analysis - Coming Soon</title>
-    <link rel="stylesheet" href="assets/styles.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
-    <!-- Meta Tags -->
-    <meta name="description" content="Tools and models to empower sports bettors.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-VoPFep0FujXttUwaL06bR0kYj2B7O0kCrP8q0Etkx1G1/Ir1u2nH++R9WzJMj3Cg" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <title>Bettor Analysis — Custom Predictive Modeling Packages</title>
+  <meta name="description" content="Custom models built to your needs with clear up-front pricing, a defined delivery timetable, and expectations set from the start." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    :root{--bg:#0e0f12;--card:#151720;--muted:#9aa3b2;--text:#e8ecf1;--accent:#39d0ff;--border:#232736}
+    body{background:var(--bg);color:var(--text)}
+    #particles-js{position:fixed;inset:0;z-index:-1}
+    .wrap{max-width:1360px;margin:0 auto;padding:32px 20px}
+    .logo{max-width:180px;height:auto;margin:24px auto 8px;display:block}
+    .tagline{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-size:clamp(22px,4vw,36px);text-align:center;margin:8px 0 10px}
+    .subtag{color:var(--muted);text-align:center;max-width:980px;margin:0 auto 16px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:14px 0 6px}
+    .button{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:linear-gradient(180deg,#1a1d27,#0f1118);color:var(--text);padding:12px 16px;border-radius:10px;font-weight:600}
+    .button:hover{border-color:#2b3042;text-decoration:none;transform:translateY(-1px)}
+    .topnav{position:sticky;top:0;z-index:10;backdrop-filter:saturate(120%) blur(6px);background:rgba(14,15,18,.6);border-bottom:1px solid var(--border)}
+    .topnav .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:1100px;margin:0 auto;padding:10px 20px}
+    .nav-links{display:flex;gap:14px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);font-weight:600}
+    .nav-links a:hover{color:var(--text)}
+    .section{padding:40px 0;scroll-margin-top:80px}
+    .section h2{font-size:clamp(22px,3vw,30px);margin:0 0 12px}
+    .lead{color:var(--muted);margin:0 0 18px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+    .grid{display:grid;gap:16px}
+    @media(min-width:860px){.grid-2{grid-template-columns:1fr 1fr}}
+    .table-wrap{overflow:auto;background:var(--card);border:1px solid var(--border);border-radius:14px}
+    table{width:100%;border-collapse:collapse;min-width:900px}
+    th,td{padding:14px 12px;vertical-align:top;border-bottom:1px solid var(--border)}
+    th{background:#1a1d26;text-align:left;font-weight:700}
+    tr:hover td{background:#141722}
+    .price{white-space:nowrap;font-weight:700}
+    .muted{color:var(--muted)}
+    .hr{height:1px;background:var(--border);border:0;margin:24px 0}
+    footer{color:var(--muted);text-align:center;padding:16px 0 28px}
+    /* Bullet lists inside table cells */
+    .cell-list{margin:0;padding-left:18px}
+    .cell-list li{margin:4px 0}
+
+    /* Center Services heading and subtext */
+    #services h2,
+    #services .lead{text-align:center;max-width:900px;margin-left:auto;margin-right:auto}
+  </style>
 </head>
 <body>
-    <!-- Background Animation -->
-    <div id="particles-js"></div>
-    <div class="container">
-        <!-- Logo -->
-        <img src="images/logo1.png" alt="Bettor Analysis Logo" class="logo">
-        
-        <!-- Tagline -->
-        <h1 class="tagline">Tools and models to empower sports bettors.</h1>
-        
-        <!-- Call-to-Action Buttons -->
-        <div class="buttons">
-            <a href="https://x.com/bettoranalysis" class="button"><i class="fab fa-twitter"></i> Follow Us on X</a>
-            <a href="https://github.com/bettor-analysis" class="button"><i class="fab fa-github"></i> Visit GitHub Repository</a>
-            <a href="https://www.youtube.com/@bettoranalysis" class="button"><i class="fab fa-youtube"></i> Subscribe on YouTube</a>
-            <a href="/gamedaymath" class="button"><i class="fab fa-gamedaymath"></i> Try GamedayMath</a>
-        </div>
-        
-        <!-- Contact Information -->
-        <p class="contact">Need to contact us? <a href="https://x.com/bettoranalysis">Message us on X</a>.</p>
+  <div id="particles-js"></div>
+
+  <!-- Sticky nav -->
+  <div class="topnav">
+    <div class="nav-wrap">
+      <a href="#top" class="nav-brand" style="display:flex;align-items:center;gap:10px">
+        <img src="images/logo1.png" alt="Bettor Analysis" style="height:28px;width:auto" />
+        <strong>Bettor Analysis</strong>
+      </a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#included">Included</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Bettor Analysis. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="https://x.com/bettoranalysis" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.youtube.com/@bettoranalysis" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://github.com/bettor-analysis" aria-label="GitHub"><i class="fab fa-github"></i></a>
+  </div>
+
+  <!-- Hero -->
+  <header id="top" class="wrap section" style="padding-top:24px">
+    <img src="images/logo1.png" alt="Bettor Analysis Logo" class="logo" />
+    <h1 class="tagline">Custom predictive modeling packages</h1>
+    <p class="subtag">
+      Custom models built to your needs with clear up-front pricing, a defined delivery timetable, and expectations set from the start. 
+      Clear pricing, clear deliverables, no black boxes.
+    </p>
+    <div class="buttons">
+      <a href="https://x.com/bettoranalysis" class="button"><i class="fab fa-twitter"></i> Follow on X</a>
+      <a href="https://github.com/bettor-analysis" class="button"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.youtube.com/@bettoranalysis" class="button"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="/gamedaymath" class="button"><i class="fa-solid fa-square-root-variable"></i> Try GamedayMath</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Services -->
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <p class="lead">Pricing is <strong>per sport</strong> unless noted. Every package ships with documented R code, CSV outputs, and a short video walkthrough.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 6%;">Tier</th>
+              <th style="width: 14%;">Name</th>
+              <th style="width: 28%;">Description</th>
+              <th style="width: 22%;">Includes</th>
+              <th style="width: 8%;">Base Price</th>
+              <th style="width: 22%;">Upgrades</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Tier 1 -->
+            <tr>
+              <td><strong>Tier 1</strong></td>
+              <td><strong>Generalized Ratings Model</strong></td>
+              <td>Examples: Bradley-Terry, Elo, or Pythagorean Expectation. Baseline output: <em>team win probabilities</em>. Spreads and Totals available using Offensive and Defensive ratings compared to league average.</td>
+              <td>
+                <ul class="cell-list">
+                  <li>Fully commented R code</li>
+                  <li>1 sport</li>
+                  <li>CSV predictions</li>
+                  <li>Video walkthrough</li>
+                </ul>
+              </td>
+              <td class="price">$300</td>
+              <td>
+                <ul class="cell-list">
+                  <li>Additional sport: +$100</li>
+                  <li>Spreads &amp; Totals package: +$50</li>
+                </ul>
+              </td>
+            </tr>
+
+            <!-- Tier 2 -->
+            <tr>
+              <td><strong>Tier 2</strong></td>
+              <td><strong>Regression Model</strong></td>
+              <td>Regression model with up to <em>2 features</em> (moneyline by default). Example: Linear or Logistic regression. Spreads/totals available via the regression output.</td>
+              <td>
+                <ul class="cell-list">
+                  <li>Fully commented R Code</li>
+                  <li>1 sport</li>
+                  <li>Train/test metrics</li>
+                  <li>CSV output &amp; video walkthrough</li>
+                </ul>
+              </td>
+              <td class="price">$550</td>
+              <td>
+                <ul class="cell-list">
+                  <li>Additional sport: +$150</li>
+                  <li>Extra features beyond 2: +$75/feature</li>
+                  <li>Spreads &amp; Totals package: +$125</li>
+                </ul>
+              </td>
+            </tr>
+
+            <!-- Tier 3 -->
+            <tr>
+              <td><strong>Tier 3</strong></td>
+              <td><strong>Machine Learning Model</strong></td>
+              <td>Random Forest or XGBoost with up to <em>2 features</em> (moneyline by default). Spreads/Totals upgrade available via the model output.</td>
+              <td>
+                <ul class="cell-list">
+                  <li>Fully commentedR Code</li>
+                  <li>1 sport</li>
+                  <li>Cross-validation metrics</li>
+                  <li>Feature importance</li>
+                  <li>CSV output &amp; video walkthrough</li>
+                </ul>
+              </td>
+              <td class="price">$1,000</td>
+              <td>
+                <ul class="cell-list">
+                  <li>Additional sport: +$200</li>
+                  <li>Extra features beyond 2: +$75/feature</li>
+                  <li>Spreads &amp; Totals package: +$150</li>
+                  <li>Hyperparameter tuning report: +$150</li>
+                </ul>
+              </td>
+            </tr>
+
+            <!-- Tier 4 -->
+            <tr>
+              <td><strong>Tier 4</strong></td>
+              <td><strong>Custom Player Prop Model</strong></td>
+              <td>Bespoke player-prop modeling (markets, features, data sources). Limited availability.</td>
+              <td>
+                <ul class="cell-list">
+                  <li>Fully commentedR Code</li>
+                  <li>Ingestion scripts &amp; schema docs</li>
+                  <li>Short consult</li>
+                  <li>Video walkthroughs</li>
+                </ul>
+              </td>
+              <td class="price">Ask for pricing</td>
+              <td>
+                <ul class="cell-list">
+                  <li>Quoted after a short scoping email</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Included -->
+    <section id="included" class="section grid grid-2">
+      <div class="card">
+        <h2>Included in All Packages</h2>
+        <ul class="muted" style="padding-left:18px;margin:0">
+          <li><strong>Transparent code:</strong> you own and can modify everything.</li>
+         <li><strong>Automated Workflow:</strong> streamlined process for data collection, model training and evaluation, a game prediction.</li>
+          <li><strong>Clean outputs:</strong> CSV predictions ready for your workflow.</li>
+          <li><strong>Video walkthrough:</strong> video walkthroughs of running and updating code and RStuido.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Expectations &amp; Pricing</h2>
+        <ul class="muted" style="padding-left:18px;margin:0">
+          <li><strong>Up-front scope:</strong> what’s included is documented and approved before work is started.</li>
+          <li><strong>Per-sport clarity:</strong> additional sports are priced explicitly.</li>
+          <li><strong>Payment Terms:</strong> 50% deposit to start, 50% upon completion (Tier 1–2 may require full payment upfront).</li>
+          <li><strong>Fixed Pricing:</strong> agreed-upon price covers the full scope — no surprise add-ons mid-build.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section">
+      <h2>Process</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 style="margin:0 0 8px">How to get started</h3>
+          <ol class="muted" style="padding-left:18px;margin:0">
+            <li><strong>Choose a tier</strong> and specify the sport(s).</li>
+            <li>For Tiers 2/3, <strong>list the predicting factors</strong> (features) you want considered. Note a features may be possible to access based on data source used.</li>
+            <li><strong>Email me with the above.</li>
+            <li>I confirm scope, price, and a delivery window. You approve; I build.</li>
+            <li><strong>Delivery:</strong> code + CSV outputs + video walkthrough.</li>
+          </ol>
         </div>
-    </footer>
-    
-    <!-- JavaScript Files -->
-    <script src="assets/script.js"></script>
-    <!-- Particles.js Library -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Typical timelines</h3>
+          <ul class="muted" style="padding-left:18px;margin:0">
+            <li><strong>Tier 1:</strong> ~3–5 business days per sport</li>
+            <li><strong>Tier 2:</strong> ~5–7 business days per sport</li>
+            <li><strong>Tier 3:</strong> ~7–10 business days per sport</li>
+            <li><strong>Tier 4:</strong> quoted after scoping</li>
+          </ul>
+          <p class="muted" style="margin:10px 0 0">If you have a deadline, say so in your email—I'll confirm what’s realistic before we start.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="lead">Ready to scope your build? Send your tier, sport(s), and (for Tiers 2/3) any preferred features.</p>
+      <div class="buttons" style="justify-content:flex-start">
+        <a class="button" href="mailto:adam@bettoranalysis.com?subject=Model%20Package%20Inquiry"><i class="fa-regular fa-envelope"></i> Email</a>
+        <a class="button" href="https://x.com/bettoranalysis"><i class="fab fa-twitter"></i> DM on X</a>
+        <a class="button" href="#services"><i class="fa-solid fa-list"></i> Compare Tiers</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="y"></span> Bettor Analysis. All rights reserved.</p>
+    <div class="buttons" style="margin-top:8px">
+      <a href="https://x.com/bettoranalysis" class="button"><i class="fab fa-twitter"></i> X</a>
+      <a href="https://www.youtube.com/@bettoranalysis" class="button"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://github.com/bettor-analysis" class="button"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){e.preventDefault();const el=document.querySelector(id);if(el){window.scrollTo({top:el.offsetTop-60,behavior:'smooth'})}}
+      });
+    });
+  </script>
 </body>
 </html>
